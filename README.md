@@ -69,6 +69,10 @@ osslsigncode verify -in somefile.exe
 
 ## Attribution And Licensing
 
+Current upstream project:
+
+- https://github.com/mtrojnar/osslsigncode
+
 The bundled `osslsigncode_vc140/osslsigncode.c` file includes the copyright and
 license header present in that bundled source file.
 
@@ -76,8 +80,12 @@ The file header states that the bundled source is GPL v3 or later, with an
 OpenSSL linking exception. Review the source header carefully before
 redistributing modified source or binaries.
 
-This repository does not currently claim to be the canonical upstream project.
-It keeps a Windows-oriented packaging of the included source snapshot.
+The bundled source header also credits Per Allansson. This repository keeps a
+Windows-oriented packaging of a bundled source snapshot and does not claim to be
+the canonical upstream project.
+
+For current releases, maintenance status, and upstream history, refer to the
+upstream project link above.
 
 ## Notes
 
