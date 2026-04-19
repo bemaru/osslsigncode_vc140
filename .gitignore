@@ -1,0 +1,9 @@
+.vs/
+packages/
+*.user
+*.VC.db
+*.opendb
+Debug/
+Release/
+x64/
+Win32/
