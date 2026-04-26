@@ -67,25 +67,65 @@ Example:
 osslsigncode verify -in somefile.exe
 ```
 
-## Attribution And Licensing
+## Provenance
 
-Current upstream project:
+Upstream reference:
 
 - https://github.com/mtrojnar/osslsigncode
 
+The bundled `osslsigncode_vc140/osslsigncode.c` file is a source snapshot, not
+a git submodule or subtree. The local git history imports it as a complete file
+and does not identify an exact upstream commit, tag, or release archive.
+
+The source file itself carries this RCS identifier:
+
+```text
+osslsigncode.c,v 1.7.1 2014/07/11 14:14:14 mfive
+```
+
+Treat that identifier and the file header as the available in-tree provenance
+for the bundled source. Before redistributing a public build or making security
+claims, compare this snapshot against the upstream project or a known release.
+
+## Licensing Context
+
 The bundled `osslsigncode_vc140/osslsigncode.c` file includes the copyright and
-license header present in that bundled source file.
+license header present in that source snapshot.
 
-The file header states that the bundled source is GPL v3 or later, with an
-OpenSSL linking exception. Review the source header carefully before
-redistributing modified source or binaries.
+That file header states that the bundled source is licensed under the GNU
+General Public License version 3 or, at your option, any later version, with a
+special OpenSSL linking exception. The exception text is part of the source
+header; it does not remove the GPL obligations for code used other than
+OpenSSL.
 
-The bundled source header also credits Per Allansson. This repository keeps a
-Windows-oriented packaging of a bundled source snapshot and does not claim to be
-the canonical upstream project.
+A copy of the GPLv3 text referenced by the source header is provided in
+`COPYING.GPL-3.0`. That file is the GPL text only; it does not replace the
+OpenSSL exception or any file-specific notices.
 
-For current releases, maintenance status, and upstream history, refer to the
-upstream project link above.
+The bundled source header credits Per Allansson. This repository does not claim
+to be the canonical upstream project.
+
+The Visual Studio project references third-party NuGet packages:
+
+- `rmt_openssl` `1.0.2.6`
+- `rmt_zlib` `1.2.8.5`
+
+Those package references are not vendored source in this repository. Review the
+third-party package licenses and support status separately before distributing
+binaries.
+
+## Local VC140 Scope
+
+This repository is the local Windows / Visual Studio 2015 (`v140`) packaging
+layer around the bundled source snapshot. The in-tree VC140-specific scope is:
+
+- Visual Studio solution and project files
+- NuGet package references for OpenSSL and zlib
+- `osslsigncode_vc140/unistd.h`, a small Windows compatibility shim
+
+The repository does not currently document a complete diff between the bundled
+`osslsigncode.c` and any upstream release. Do not treat the C file as pristine
+upstream source without doing that comparison.
 
 ## Notes
 
